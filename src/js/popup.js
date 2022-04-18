@@ -59,7 +59,14 @@
                 ].join(';'))
             } else {
                 rurlState.setAttribute('style', '--state-color: hsl(351, 62%, 53%)')
-                console.warn('The url is invalid or malformed.')
+                console.info('%c! The url is invalid or malformed', [
+                    ['padding',          '0.15em 0.43em'                   ].join(':'),
+                    ['color',            'hsl(40, 97%, 55%)'               ].join(':'),
+                    ['background-color', 'hsl(50, 94%, 16%)'               ].join(':'),
+                    ['box-shadow',       '0 3px 1em hsl(220, 6%, 74%, 28%)'].join(':'),
+                    ['border',           '1px solid hsl(50, 96%, 22%)'     ].join(':'),
+                    ['border-radius',    '4px'                             ].join(':'),
+                ].join(';'))
             }
         }, 510)
     })
