@@ -10,7 +10,7 @@
         "128": "src/img/icon128.png"
     },
 
-    "permissions": ["storage", "tabs", "experimental"],
+    "permissions": ["storage", "tabs"],
     "background": {
         "service_worker": "src/js/background.js"
     },
