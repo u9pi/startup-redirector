@@ -1,0 +1,20 @@
+{
+    "name": "Startup Redirector",
+    "description": "you'll be redirected when the browser starts",
+    "version": "1.0",
+    "manifest_version": 3,
+
+    "icons": {
+        "16": "src/img/icon16.png",
+        "48": "src/img/icon48.png",
+        "128": "src/img/icon128.png"
+    },
+
+    "permissions": ["storage", "tabs", "experimental"],
+    "background": {
+        "service_worker": "src/js/background.js"
+    },
+    "action": {
+        "default_popup": "src/popup.html"
+    }
+}

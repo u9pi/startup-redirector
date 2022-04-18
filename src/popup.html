@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        * {
+            font-family: monospace;
+            font-size: 9pt;
+            overflow: hidden;
+        }
+        ::selection {
+            color: hsl(270, 1%, 25%);
+            background-color: hsl(230, 2%, 58%);
+        }
+
+        body {
+            margin: auto;
+            color: hsl(230, 7%, 81%);
+            background-color: hsl(270, 3%, 12%);
+        }
+        section {
+            position: relative;
+        }
+        header {
+            display: flex;
+            align-items: baseline;
+            flex-direction: row;
+        }
+        h3 {
+            margin: 0.63em 0.4em 0.2em;
+            font-size: 10pt;
+        }
+        input {
+            border: none;
+            padding: 0.275em 0.6em;
+            color: hsl(341, 61%, 59%);
+            background-color: hsl(255, 4%, 20%);
+            transition: all 125ms linear;
+        }
+        input:focus-visible {
+            outline: none;
+        }
+        input::selection {
+            color: hsl(255, 4%, 20%);
+            background-color: hsl(341, 61%, 59%);
+        }
+
+        state {
+            --state-color: hsla(0, 0%, 0%, 0%);
+            width: 0;
+            height: 0;
+            right: 0;
+            bottom: 0;
+            border-style: solid;
+            border-width: 0 0 7px 7px;
+            border-color: hsla(0, 0%, 0%, 0%) hsla(0, 0%, 0%, 0%) var(--state-color) hsla(0, 0%, 0%, 0%);
+            display: block;
+            position: absolute;
+            transition: all 67ms linear;
+            pointer-events: none;
+        }
+        help {
+            font-size: 8pt;
+        }
+        help::after {
+            content: "(?)";
+            display: inline;
+        }
+        message {
+            margin: 0 0.3em 0.8em;
+            padding: 0.2em;
+            color: hsl(341, 31%, 56%);
+            background-color: hsl(300, 2%, 8%);
+            border: 1px solid hsl(300, 3%, 15%);
+            box-shadow: 0 4px 0.76em hsla(0, 0%, 0%, 28%);
+        }
+        message::selection {
+            color: hsl(300, 2%, 8%);
+            background-color: hsl(341, 22%, 51%);
+        }
+
+        #rurl {
+            margin-bottom: 0.63em;
+        }
+
+        [clickable] {
+            color: hsl(341, 58%, 61%);
+            cursor: pointer;
+        }
+
+        /* Visible */
+        [nvn="!"] {
+            display: block;
+            height: auto;
+        }
+        /* Invisible */
+        [nvn="?"] {
+            display: none;
+        }
+    </style>
+    <body>
+        <div id="point">
+            <section id="rurl">
+                <header>
+                    <h3>Redirect URL</h3>
+                    <help send="When the browser starts, it takes you to that page." clickable></help>
+                </header>
+                <input overhaul />
+                <state></state>
+            </section>
+            <section>
+                <message resp nvn="?"></message>
+            </section>
+        </div>
+        <script src="./js/popup.js"></script>
+    </body>
+</html>
